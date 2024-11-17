@@ -87,12 +87,3 @@ Gets data of an invoice with a specific ID.
 ## GET /invoices/total
 Requires a query parameter `due_date` in YYYY-MM-DD format
 
-
-# Prisma error
-```
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
-}
-
-```
