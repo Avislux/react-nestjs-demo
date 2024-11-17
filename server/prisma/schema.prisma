@@ -3,9 +3,14 @@
 
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+// for mac docker
+//binaryTargets = ["native", "linux-musl-openssl-3.0.x", "linux-musl-arm64-openssl-3.0.x"]
 
+//run npx prisma generate when binaryTargets are changed.
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x", "linux-musl-arm64-openssl-3.0.x"]
 }
 
 datasource db {
@@ -27,4 +32,5 @@ model Invoice {
   due_date    DateTime
   description String?
   user_id     Int
+  paid        Boolean? @default(false)
 }
